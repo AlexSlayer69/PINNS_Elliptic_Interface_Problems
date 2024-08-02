@@ -171,7 +171,7 @@ class P3DELoss:
         
         loss = loss_jump + loss_boundary + (loss_deriv/60000) + (loss_pde/100)
         loss.backward()
-        print('PDE: ',loss_pde.item()/10,'Bound: ',loss_boundary.item(),'jmp: ',loss_jump.item(),'deriv: ',loss_deriv.item()/60000)
+        #print('PDE: ',loss_pde.item()/10,'Bound: ',loss_boundary.item(),'jmp: ',loss_jump.item(),'deriv: ',loss_deriv.item()/60000)
         return loss
 
         

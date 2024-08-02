@@ -179,6 +179,6 @@ class P2DSTLoss:
 
         loss = loss_jump + loss_boundary + loss_deriv + loss_pde
         loss.backward()
-        print('PDE: ',loss_pde.item(),'Bound: ',loss_boundary.item(),'jmp: ',loss_jump.item(),'deriv: ',loss_deriv.item())
+        #print('PDE: ',loss_pde.item(),'Bound: ',loss_boundary.item(),'jmp: ',loss_jump.item(),'deriv: ',loss_deriv.item())
         return loss
     
