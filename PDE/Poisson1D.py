@@ -4,7 +4,9 @@ from sympy.solvers import solve
 from sympy import Symbol
 import numpy as np
 
-class Poisson1D():
+from Template_PDE import AbstractPDE
+
+class Poisson1D(AbstractPDE):
     """
     The Exact solution for One dimensional Poisson Equation with dirchlet boundary conditions
     ∇(K_m ∇u) = -1 in Ω_m
@@ -13,6 +15,7 @@ class Poisson1D():
     u(0) = u(1) = 0    
     """
     def __init__(self,K,gamma):
+        super().__init__()
         self.K = K
         self.gamma = gamma
         
@@ -31,8 +34,6 @@ class Poisson1D():
         self.C = [0,]
         for i in range(1,len(K)):
             self.C.append((self.B*self.gamma[i] - ((self.gamma[i]**2)/2))*inv_K[i-1] + self.C[i-1])
-            
-        self.equation = np.vectorize(self.solution)
         
     def solution(self,x):
         """

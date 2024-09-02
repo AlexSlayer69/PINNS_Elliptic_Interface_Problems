@@ -1,7 +1,9 @@
 import numpy as np
 import math
 
-class Poisson2DST:
+from Template_PDE import AbstractPDE
+
+class Poisson2DST(AbstractPDE):
     """
     The Exact solution for Two dimensional Poisson Equation with dirchlet boundary conditions
     ∇(K_m ∇u) = 1 in Ω_m
@@ -10,7 +12,7 @@ class Poisson2DST:
     u_m = (Λ_m)^d    
     """
     def __init__(self):
-        self.equation = np.vectorize(self.solution)
+        super().__init__()
 
     def solution(self,x, y):
         if(y <= x):
@@ -18,9 +20,9 @@ class Poisson2DST:
         else:
             return x**2 + y**2 
         
-class Poisson2DCirc:
+class Poisson2DCirc(AbstractPDE):
     def __init__(self):
-        self.equation = np.vectorize(self.solution)
+        super().__init__()
 
     def solution(self,x, y):
         if(x**2 + y**2 <= 0.25):

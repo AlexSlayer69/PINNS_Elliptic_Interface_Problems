@@ -11,7 +11,6 @@ class Poisson1DLosses:
     A class for all the losses of 1D Poisson Equation
     n_points: number of points to be used in training 
     sub_domains: number of sub-domains of the problem
-    sampling: A bool that determines whether to use sampling or not
     h: It is the precision for Γ+ and Γ- 
     K : Values of K as given in the equation
     gamma : Points belonging to Γ
